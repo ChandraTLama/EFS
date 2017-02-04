@@ -1,8 +1,9 @@
 @extends('app')
 @section('content')
+<div class="container">
     <h1>Customer </h1>
 
-    <div class="container">
+
         <table class="table table-striped table-bordered table-hover">
             <tbody>
             <tr class="bg-info">
@@ -42,10 +43,10 @@
 
             </tbody>
       </table>
-    </div>
+  
 
 <h1>Stock</h1>
-<hr>
+
 <table class="table table-striped table-bordered table-hover">
     <thead>
     <tr class="bg-info">
@@ -74,18 +75,21 @@
 
     </tbody>
 </table>
+
+
     <?php $a = 0; ?> 
     @foreach($stocks as $stock)
             @if ($stock->customer_id == $customer->id)
                    <?php $a=$a+($stock->purchase_price * $stock->shares);?> 
             @endif   
     @endforeach        
-
 <h4>Total of initial Stock portfolio <?php echo $a ?></h4>
+
 
 <h1>Investment</h1>
   
     <hr>
+   
     <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="bg-info">
@@ -137,7 +141,9 @@
 <h4>Total of Initial Portfolio Value <?php echo $a+$b ?>
 <h4>Total of Current Portfolio Value <?php echo $a+$c ?>
 
-
+</h4>
+</h4>
+</div>
 
 @stop
 
